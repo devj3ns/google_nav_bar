@@ -9,7 +9,7 @@ class GNav extends StatefulWidget {
     this.selectedIndex = 0,
     required this.onTabChange,
     this.gap = 0,
-    this.padding = const EdgeInsets.all(25),
+    this.tabPadding = const EdgeInsets.all(25),
     this.activeColor,
     this.color,
     this.rippleColor = Colors.transparent,
@@ -29,6 +29,7 @@ class GNav extends StatefulWidget {
     this.haptic = true,
     this.tabBackgroundGradient,
     this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
+    this.alwaysShowText = false,
   }) : super(key: key);
 
   final List<GButton> tabs;
@@ -43,7 +44,7 @@ class GNav extends StatefulWidget {
   final Color? color;
   final Color rippleColor;
   final Color hoverColor;
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry tabPadding;
   final EdgeInsetsGeometry tabMargin;
   final TextStyle? textStyle;
   final Duration duration;
@@ -55,6 +56,7 @@ class GNav extends StatefulWidget {
   final List<BoxShadow>? tabShadow;
   final Gradient? tabBackgroundGradient;
   final MainAxisAlignment mainAxisAlignment;
+  final bool alwaysShowText;
 
   @override
   _GNavState createState() => _GNavState();
@@ -93,10 +95,9 @@ class _GNavState extends State<GNav> {
                       iconActiveColor: t.iconActiveColor ?? widget.activeColor,
                       iconColor: t.iconColor ?? widget.color,
                       iconSize: t.iconSize ?? widget.iconSize,
-                      textColor: t.textColor ?? widget.activeColor,
                       rippleColor: t.rippleColor ?? widget.rippleColor,
                       hoverColor: t.hoverColor ?? widget.hoverColor,
-                      padding: t.padding ?? widget.padding,
+                      padding: t.padding ?? widget.tabPadding,
                       textStyle: t.textStyle ?? widget.textStyle,
                       text: t.text,
                       icon: t.icon,
@@ -116,12 +117,16 @@ class _GNavState extends State<GNav> {
                         });
                         widget.onTabChange(selectedIndex);
 
-                        Future.delayed(widget.duration, () {
+                        setState(() {
+                          clickable = true;
+                        });
+                        /*Future.delayed(widget.duration, () {
                           setState(() {
                             clickable = true;
                           });
-                        });
+                        });*/
                       },
+                      alwaysShowText: widget.alwaysShowText,
                     ))
                 .toList()));
   }

@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         iconSize: 20,
                         textStyle: TextStyle(fontSize: 16, color: Colors.white),
                         tabBackgroundColor: Colors.grey[900],
-                        padding: EdgeInsets.symmetric(
+                        tabPadding: EdgeInsets.symmetric(
                             horizontal: 20, vertical: 16.5),
                         duration: Duration(milliseconds: 800),
                         tabs: [
@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         iconSize: 20,
                         textStyle: TextStyle(fontSize: 16, color: Colors.black),
                         // tabBackgroundColor: Colors.grey[100],
-                        padding: EdgeInsets.symmetric(
+                        tabPadding: EdgeInsets.symmetric(
                             horizontal: 20, vertical: 14.5),
                         duration: Duration(milliseconds: 800),
                         tabs: [
@@ -189,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 22.0, vertical: 14),
                       child: GNav(
-                          padding: EdgeInsets.symmetric(
+                          tabPadding: EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
                           duration: Duration(milliseconds: 800),
                           gap: 8.5,
@@ -256,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         iconSize: 16,
                         textStyle: TextStyle(fontSize: 12, color: Colors.white),
                         tabBackgroundColor: Colors.grey[800],
-                        padding: EdgeInsets.symmetric(
+                        tabPadding: EdgeInsets.symmetric(
                             horizontal: 20, vertical: 16.5),
                         duration: Duration(milliseconds: 800),
                         tabs: [

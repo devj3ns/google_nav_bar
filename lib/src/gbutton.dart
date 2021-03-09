@@ -12,13 +12,12 @@ class GButton extends StatefulWidget {
   final Color? rippleColor;
   final Color? hoverColor;
   final Color? iconActiveColor;
-  final Color? textColor;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final TextStyle? textStyle;
   final double? iconSize;
   final Function? onPressed;
-  final String text;
+  final String? text;
   final IconData icon;
   final Color? backgroundColor;
   final Duration? duration;
@@ -30,6 +29,7 @@ class GButton extends StatefulWidget {
   final Border? activeBorder;
   final List<BoxShadow>? shadow;
   final String? semanticLabel;
+  final bool alwaysShowText;
 
   const GButton({
     Key? key,
@@ -41,8 +41,7 @@ class GButton extends StatefulWidget {
     this.rippleColor,
     this.hoverColor,
     this.iconActiveColor,
-    this.text = '',
-    this.textColor,
+    this.text,
     this.padding,
     this.margin,
     this.duration,
@@ -59,6 +58,7 @@ class GButton extends StatefulWidget {
     this.activeBorder,
     this.shadow,
     this.semanticLabel,
+    this.alwaysShowText = false,
   }) : super(key: key);
 
   @override
@@ -95,14 +95,9 @@ class _GButtonState extends State<GButton> {
         iconActiveColor: widget.iconActiveColor,
         iconColor: widget.iconColor,
         icon: widget.icon,
-        text: Text(
-          widget.text,
-          style: widget.textStyle ??
-              TextStyle(
-                fontWeight: FontWeight.w600,
-                color: widget.textColor,
-              ),
-        ),
+        text: widget.text,
+        textStyle: widget.textStyle,
+        alwaysShowText: widget.alwaysShowText,
       ),
     );
   }
