@@ -1,6 +1,7 @@
 import 'dart:math' show pow;
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Button extends StatefulWidget {
   const Button({
@@ -100,7 +101,7 @@ class _ButtonState extends State<Button> with TickerProviderStateMixin {
       expandController.forward();
 
     Widget icon = widget.leading ??
-        Icon(widget.icon,
+        FaIcon(widget.icon,
             color: _colorTweenAnimation.value, size: widget.iconSize);
 
     Text text = Text(
