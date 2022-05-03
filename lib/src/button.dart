@@ -202,7 +202,12 @@ class _ButtonState extends State<Button> with TickerProviderStateMixin {
                           )
                   ],
                 ),
-                Align(alignment: Alignment.centerLeft, child: icon),
+                SizedBox(
+                  height: 26,
+                  child: Center(
+                    child: icon,
+                  ),
+                ),
               ]),
             ),
           ),
